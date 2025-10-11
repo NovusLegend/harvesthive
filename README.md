@@ -1,4 +1,4 @@
-HarvestHive Terms and Conditions of Use
+##HarvestHive Terms and Conditions of Use
 Effective Date: [11th Oct, 2025]
 
 IMPORTANT NOTICE: These Terms and Conditions ("Terms") constitute a legally binding agreement between MUGABI JEREMIAH ("HarvestHive," "we," "us," or "our") and you ("User" or "you") concerning your access to and use of the HarvestHive mobile application and website (collectively, the "Platform"). By accessing or using the Platform, you acknowledge that you have read, understood, and agree to be bound by all of these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, YOU ARE EXPRESSLY PROHIBITED FROM USING THE PLATFORM AND MUST DISCONTINUE USE IMMEDIATELY.

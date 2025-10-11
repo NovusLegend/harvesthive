@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HarvestHive</string>
+    <string name="title_activity_main">HarvestHive</string>
+    <string name="package_name">com.harvesthive.app</string>
+    <string name="custom_url_scheme">com.harvesthive.app</string>
+</resources>

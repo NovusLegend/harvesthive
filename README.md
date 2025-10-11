@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# HarvestHive - Farmer Marketplace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based marketplace application that connects farmers with buyers, allowing them to post products, browse listings, and communicate through an integrated chat system.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Authentication**: Secure login/register system using Firebase Auth
+- **Product Management**: Farmers can post products with descriptions, prices, and contact details
+- **Product Browsing**: Buyers can search and browse available products
+- **Real-time Chat**: Direct communication between buyers and sellers
+- **Responsive Design**: Mobile-friendly interface based on modern design principles
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 18 with React Router
+- **Backend**: Firebase (Firestore for data, Auth for authentication)
+- **Styling**: Custom CSS with CSS Variables
+- **State Management**: React Context API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup Instructions
 
-### `npm test`
+### 1. Firebase Configuration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
+2. Enable Authentication and Firestore Database
+3. Copy your Firebase configuration
+4. Update `src/firebase.js` with your Firebase config:
 
-### `npm run build`
+```javascript
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "your-app-id"
+};
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Firestore Security Rules
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Set up the following Firestore security rules:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Products collection - anyone can read, authenticated users can write
+    match /products/{document} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Chats collection - authenticated users can read/write
+    match /chats/{chatId}/messages/{messageId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
 
-### `npm run eject`
+### 3. Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start development server
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app will be available at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```
+src/
+├── components/          # Reusable components
+│   ├── Navbar.js       # Navigation component
+│   └── ProductCard.js  # Product display component
+├── contexts/           # React Context providers
+│   └── AuthContext.js  # Authentication context
+├── pages/              # Page components
+│   ├── Home.js         # Landing page
+│   ├── Products.js     # Product listing page
+│   ├── PostProduct.js  # Product creation page
+│   ├── Login.js        # Login page
+│   ├── Register.js     # Registration page
+│   └── Chat.js         # Chat interface
+├── firebase.js         # Firebase configuration
+└── App.js             # Main app component
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### For Farmers (Sellers)
+1. Register an account
+2. Navigate to "Sell Product" to post your products
+3. Fill in product details (name, description, price, category, location, contact info)
+4. Respond to buyer inquiries through the chat system
 
-### Code Splitting
+### For Buyers
+1. Browse products on the main products page
+2. Use the search functionality to find specific items
+3. Click "Contact Seller" to start a conversation
+4. Use the chat system to communicate with farmers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Design System
 
-### Analyzing the Bundle Size
+The app uses a consistent design system based on the provided design.json:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Primary Color**: #00AEB5 (Teal)
+- **Secondary Color**: #0B2A4A (Navy Blue)
+- **Accent Color**: #20D0C9 (Cyan)
+- **Typography**: Poppins font family
+- **Spacing**: 8px base unit with consistent spacing scale
 
-### Making a Progressive Web App
+## Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Available Scripts
 
-### Advanced Configuration
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+This project was created by Mugabi Jeremiah. Feel free to contribute by:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Forking the repository
+2. Creating a feature branch
+3. Making your changes
+4. Submitting a pull request
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the MIT License.

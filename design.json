@@ -1,0 +1,175 @@
+{
+    "source": "https://interschoolscoding.com/",
+    "generated_at": "2025-10-11T00:00:00Z",
+    "notes": "This JSON is a best-effort design extraction. The site appears to be a React app served with minimal server-side HTML; full stylesheet files were not accessible to the crawler. Where exact values (fonts, exact hex colors) could not be retrieved, fields are marked \"ESTIMATED\" and should be confirmed against the live site or design files.",
+    "structure": {
+      "pages": [
+        {
+          "id": "home",
+          "path": "/",
+          "title": "Inter Schools Coding Competitions",
+          "sections": [
+            "navbar",
+            "hero",
+            "about",
+            "schools",
+            "partners",
+            "call_to_action",
+            "footer"
+          ]
+        },
+        {
+          "id": "about",
+          "path": "/about",
+          "title": "About"
+        },
+        {
+          "id": "schools",
+          "path": "/schools",
+          "title": "Schools"
+        },
+        {
+          "id": "partners",
+          "path": "/partners",
+          "title": "Partners"
+        },
+        {
+          "id": "contact",
+          "path": "/contact",
+          "title": "Contact Us"
+        }
+      ]
+    },
+    "components": {
+      "navbar": {
+        "elements": ["logo", "nav_links", "login_button", "donate_button", "mobile_menu_toggle"],
+        "behavior": {
+          "sticky": true,
+          "responsive": true
+        }
+      },
+      "hero": {
+        "elements": ["headline", "subheadline", "primary_cta_register", "support_links"],
+        "layout": "centered stacked",
+        "content_sample": {
+          "headline": "Empowering the next generation through innovative coding education and comprehensive technology skills development.",
+          "cta": "Register Now"
+        }
+      },
+      "footer": {
+        "elements": ["contact_address", "phone_email", "quick_links", "social_links", "copyright"],
+        "content_sample": {
+          "address": "Akamwesi Mall Level 3, Kampala, Uganda",
+          "phone": "+256 200 946 766",
+          "email": "info@interschoolscoding.com"
+        }
+      }
+    },
+    "layout": {
+      "grid": "12-column responsive",
+      "container_widths": {
+        "sm": "540px",
+        "md": "720px",
+        "lg": "960px",
+        "xl": "1140px"
+      },
+      "spacing": {
+        "base": "16px",
+        "gutter": "24px"
+      }
+    },
+    "typography": {
+      "primary_font": {
+        "name": "ESTIMATED: Poppins / Inter / system-sans",
+        "weights": [300, 400, 600, 700]
+      },
+      "sizes": {
+        "h1": "36px",
+        "h2": "28px",
+        "h3": "22px",
+        "body": "16px",
+        "small": "14px"
+      },
+      "line_heights": {
+        "heading": 1.2,
+        "body": 1.6
+      }
+    },
+    "color_palette": {
+      "source_note": "Exact stylesheet not accessible; colors below are ESTIMATED from visible page text and common palette choices. Please replace with exact hex codes from the live CSS or Figma file if available.",
+      "primary": {
+        "name": "Primary Teal/Blue (ESTIMATED)",
+        "hex": "#00AEB5",
+        "usage": "primary buttons, accents"
+      },
+      "secondary": {
+        "name": "Deep Blue / Navy (ESTIMATED)",
+        "hex": "#0B2A4A",
+        "usage": "headings, navbar text"
+      },
+      "accent": {
+        "name": "Bright Cyan (ESTIMATED)",
+        "hex": "#20D0C9",
+        "usage": "highlights, icons"
+      },
+      "muted": {
+        "name": "Gray (ESTIMATED)",
+        "hex": "#6B7280",
+        "usage": "body text, metadata"
+      },
+      "background": {
+        "name": "Off White",
+        "hex": "#FFFFFF",
+        "usage": "page background"
+      },
+      "cta_text": {
+        "hex": "#FFFFFF",
+        "usage": "text on primary buttons"
+      }
+    },
+    "assets": {
+      "logo": {
+        "url": "ESTIMATED: /assets/logo.png",
+        "alt": "ISCC logo"
+      },
+      "hero_image": {
+        "url": "ESTIMATED: /assets/hero-illustration.svg",
+        "alt": "Students coding illustration"
+      }
+    },
+    "accessibility": {
+      "contrast_targets": "Recommend checking WCAG AA/AAA for button/background pairs; suggested primary (#00AEB5) on white meets AA for large text but should be validated.",
+      "aria": "Nav and CTAs should include aria-labels and skip links for keyboard users"
+    },
+    "react_structure_suggestion": {
+      "state_management": "Lightweight — local component state + Context for auth (login/donate). No heavy redux expected.",
+      "routing": "React Router with routes for /, /about, /schools, /partners, /contact",
+      "components": ["Header/Navbar", "Hero", "Section (generic)", "Footer", "Form: Register", "Modal: Login"]
+    },
+    "style_tokens": {
+      "--color-primary": "#00AEB5  /* ESTIMATED */",
+      "--color-secondary": "#0B2A4A  /* ESTIMATED */",
+      "--color-muted": "#6B7280  /* ESTIMATED */",
+      "--space-1": "8px",
+      "--space-2": "16px",
+      "--radius": "8px"
+    },
+    "how_to_confirm_exact_values": [
+      "Inspect the live site in Chrome DevTools: check computed styles and CSS variables.",
+      "If you have the project's repo, open src/styles or public/style.css to copy exact tokens.",
+      "Ask the site owner for Figma/Sketch design file or the root CSS/SCSS file."
+    ],
+    "extracted_text_snippets": {
+      "hero": "Empowering the next generation through innovative coding education and comprehensive technology skills development.",
+      "cta": "Register Now",
+      "contact": "Akamwesi Mall Level 3, Kampala, Uganda | +256 200 946 766 | info@interschoolscoding.com"
+    },
+    "sources": [
+      {
+        "type": "page_html",
+        "ref": "turn0view0",
+        "note": "Basic server HTML content (navigation labels, footer contact and CTA) extracted from the public HTML response. Full CSS and assets were not returned by the crawler."
+      }
+    ]
+  }
+  

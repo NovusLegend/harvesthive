@@ -1,0 +1,139 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0;
+}
+
+.navbar-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.logo-image {
+  height: 40px;
+  width: 40px;
+  margin-right: var(--space-1);
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: var(--space-3);
+}
+
+.nav-links {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-links:hover {
+  color: var(--color-primary);
+}
+
+.register-btn {
+  background-color: var(--color-primary);
+  color: var(--color-cta-text) !important;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-cta-text) !important;
+}
+
+.logout-btn {
+  color: var(--color-muted);
+}
+
+.logout-btn:hover {
+  color: #dc2626;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: var(--color-secondary);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--color-background);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: var(--space-2) 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: var(--space-1) 0;
+  }
+
+  .nav-links {
+    padding: var(--space-1) 0;
+    display: block;
+  }
+  
+  .logo-image {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+}

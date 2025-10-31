@@ -1,14 +1,27 @@
 .chat-page {
-  padding: var(--space-4) 0;
   min-height: 100vh;
 }
 
-.chat-layout {
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.chat-container {
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: var(--space-3);
-  max-width: 1200px;
-  margin: 0 auto;
   height: 70vh;
 }
 
@@ -22,9 +35,6 @@
 .chat-main {
   display: flex;
   flex-direction: column;
-}
-
-.chat-container {
   background-color: var(--color-background);
   border-radius: var(--radius);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -1,6 +1,21 @@
 .post-product-page {
-  padding: var(--space-4) 0;
   min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin: 0;
 }
 
 .post-product-page h1 {
@@ -8,6 +23,173 @@
   color: var(--color-secondary);
   text-align: center;
   margin-bottom: var(--space-4);
+}
+
+/* Image Upload Styles */
+.image-upload-container {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.image-input {
+  display: none;
+}
+
+.image-upload-label {
+  display: block;
+  cursor: pointer;
+  border: 2px dashed #d1d5db;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-upload-label:hover {
+  border-color: var(--color-primary);
+  background: #f9fafb;
+}
+
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 4rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.image-upload-label:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.image-placeholder p {
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.image-placeholder span {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.image-preview {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+}
+
+.image-preview img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.image-preview:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay svg {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-progress {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.3s ease;
+}
+
+/* Location Map Styles */
+.location-map-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.location-iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.map-coordinates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.coordinate-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.coordinate-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.coordinate-group input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.map-hint {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin: 0;
+  font-style: italic;
 }
 
 .product-form {

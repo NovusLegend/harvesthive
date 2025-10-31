@@ -41,7 +41,7 @@ function Register() {
     setLoading(true);
 
     try {
-      const userCredential = await signup(formData.email, formData.password);
+      await signup(formData.email, formData.password);
       
       // Create user profile
       await createUserProfile({

@@ -36,44 +36,36 @@ function Products() {
     product.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) {
-    return (
-      <div className="products-page">
-        <div className="container">
-          <div className="loading">Loading products...</div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="products-page">
-      <div className="container">
-        <div className="products-header">
-          <h1>Available Products</h1>
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-input"
-            />
-          </div>
-        </div>
-
-        {filteredProducts.length === 0 ? (
-          <div className="no-products">
-            <p>No products found. {searchTerm && 'Try adjusting your search terms.'}</p>
-          </div>
-        ) : (
-          <div className="products-grid">
-            {filteredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
+      <div className="page-header">
+        <h1>Available Products</h1>
+        <p className="page-subtitle">Browse fresh produce from local farmers</p>
       </div>
+
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+      </div>
+
+      {loading ? (
+        <div className="loading">Loading products...</div>
+      ) : filteredProducts.length === 0 ? (
+        <div className="no-products">
+          <p>No products found. {searchTerm && 'Try adjusting your search terms.'}</p>
+        </div>
+      ) : (
+        <div className="products-grid">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

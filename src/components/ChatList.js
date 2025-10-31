@@ -10,7 +10,7 @@ function ChatList() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(true);
   const { currentUser } = useAuth();
-  const { getUserDisplayName, getUserProfile } = useUserProfile();
+  const { getUserDisplayName } = useUserProfile();
 
   useEffect(() => {
     if (!currentUser) return;

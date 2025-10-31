@@ -1,10 +1,10 @@
-#HarvestHive Terms and Conditions of Use
+# HarvestHive Terms and Conditions of Use
 Effective Date: [11th Oct, 2025]
 
-##IMPORTANT NOTICE: These Terms and Conditions ("Terms") constitute a legally binding agreement between MUGABI JEREMIAH ("HarvestHive," "we," "us," or "our") and you ("User" or "you") concerning your access to and use of the HarvestHive mobile application and website (collectively, the "Platform"). By accessing or using the Platform, you acknowledge that you have read, understood, and agree to be bound by all of these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, YOU ARE EXPRESSLY PROHIBITED FROM USING THE PLATFORM AND MUST DISCONTINUE USE IMMEDIATELY.
+## IMPORTANT NOTICE: These Terms and Conditions ("Terms") constitute a legally binding agreement between MUGABI JEREMIAH ("HarvestHive," "we," "us," or "our") and you ("User" or "you") concerning your access to and use of the HarvestHive mobile application and website (collectively, the "Platform"). By accessing or using the Platform, you acknowledge that you have read, understood, and agree to be bound by all of these Terms. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, YOU ARE EXPRESSLY PROHIBITED FROM USING THE PLATFORM AND MUST DISCONTINUE USE IMMEDIATELY.
 
-##1. HarvestHive Platform Role and Disclaimer
-###1.1. Role as Facilitator. HarvestHive operates solely as a marketplace and technological platform to facilitate connections between independent farmers ("Sellers") and buyers ("Buyers"). HarvestHive is not a party to any transaction, sale, purchase, or agreement between Users.
+## 1. HarvestHive Platform Role and Disclaimer
+###  1.1. Role as Facilitator. HarvestHive operates solely as a marketplace and technological platform to facilitate connections between independent farmers ("Sellers") and buyers ("Buyers"). HarvestHive is not a party to any transaction, sale, purchase, or agreement between Users.
 ###1.2. No Guarantee of Goods. We make no guarantees, warranties, or representations regarding the quality, safety, legality, delivery, or authenticity of any products advertised or sold by Sellers, nor the financial ability of Buyers to pay for products. Users bear sole responsibility for verifying the integrity of their transaction partners.
 
 ##2. User Accounts and Data Responsibility

@@ -13,7 +13,7 @@ function ProductCard({ product }) {
     <div className="product-card">
       <div className="product-header">
         <h3 className="product-name">{product.name}</h3>
-        <span className="product-price">${product.price}</span>
+        <span className="product-price">UGX{product.price}</span>
       </div>
       
       <div className="product-details">

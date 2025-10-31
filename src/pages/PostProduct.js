@@ -26,11 +26,38 @@ function PostProduct() {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
+    const { name, value } = e.target;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+
+    // If latitude or longitude changes, update location via reverse geocoding
+    if (name === 'latitude' || name === 'longitude') {
+      const lat = name === 'latitude' ? value : formData.latitude;
+      const lon = name === 'longitude' ? value : formData.longitude;
+      
+      if (lat && lon) {
+        try {
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+          );
+          const data = await response.json();
+          
+          if (data.display_name) {
+            setFormData(prev => ({
+              ...prev,
+              [name]: value,
+              location: data.display_name
+            }));
+          }
+        } catch (error) {
+          console.error('Error fetching location:', error);
+        }
+      }
+    }
   };
 
   const handleImageChange = (e) => {

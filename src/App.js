@@ -14,6 +14,7 @@ import Register from './pages/Register';
 import Chat from './pages/Chat';
 import Analytics from './pages/Analytics';
 import Profile from './pages/Profile';
+import Foreshadow from './pages/Foreshadow';
 import './App.css';
 
 function AppContent() {
@@ -48,6 +49,7 @@ function AppContent() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/foreshadow" element={<Foreshadow />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </DashboardLayout>

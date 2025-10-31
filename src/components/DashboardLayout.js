@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { MdDashboard, MdShoppingCart, MdAddCircle, MdChat, MdAnalytics, MdLogout } from 'react-icons/md';
+import { MdDashboard, MdShoppingCart, MdAddCircle, MdChat, MdAnalytics, MdLogout, MdCloud } from 'react-icons/md';
 import { GiWheat } from 'react-icons/gi';
 import './DashboardLayout.css';
 
@@ -18,6 +18,7 @@ function DashboardLayout({ children }) {
     { path: '/post-product', label: 'Post Product', icon: MdAddCircle },
     { path: '/chat', label: 'Messages', icon: MdChat },
     { path: '/analytics', label: 'Analytics', icon: MdAnalytics },
+    { path: '/foreshadow', label: 'Weather Forecast', icon: MdCloud },
   ];
 
   const handleLogout = async () => {

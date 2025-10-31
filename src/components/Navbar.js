@@ -30,16 +30,20 @@ function Navbar() {
         </div>
         
         <ul className={isMenuOpen ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={() => setIsMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/products" className="nav-links" onClick={() => setIsMenuOpen(false)}>
-              Products
-            </Link>
-          </li>
+          {currentUser && (
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={() => setIsMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+          )}
+          {currentUser && (
+            <li className="nav-item">
+              <Link to="/products" className="nav-links" onClick={() => setIsMenuOpen(false)}>
+                Products
+              </Link>
+            </li>
+          )}
           {currentUser && (
             <li className="nav-item">
               <Link to="/post-product" className="nav-links" onClick={() => setIsMenuOpen(false)}>

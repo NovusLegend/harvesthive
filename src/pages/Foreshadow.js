@@ -114,11 +114,15 @@ function Foreshadow() {
       const dateKey = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       const values = day.values;
       
+      // Calculate daily rainfall: convert intensity (mm/hr) to daily total (mm/day)
+      // precipitationIntensityAvg is in mm/hr, multiply by 24 for daily total
+      const dailyRainfall = (values.precipitationIntensityAvg || 0) * 24;
+      
       return {
         date: dateKey,
         temperature: Math.round(values.temperatureAvg || values.temperature || 0),
         humidity: Math.round(values.humidityAvg || 0),
-        rainfall: parseFloat((values.precipitationIntensityAvg || 0).toFixed(2)),
+        rainfall: parseFloat(dailyRainfall.toFixed(2)),
         windSpeed: parseFloat((values.windSpeedAvg || 0).toFixed(1)),
         weather: getWeatherDescription(values.weatherCodeMax || values.weatherCode || 0)
       };
@@ -156,21 +160,29 @@ function Foreshadow() {
 
     // Check for heavy rainfall
     const totalRainfall = data.reduce((sum, d) => sum + d.rainfall, 0);
-    const rainyDays = data.filter(d => d.rainfall > 2).length;
+    const rainyDays = data.filter(d => d.rainfall > 5).length;
+    const avgDailyRain = totalRainfall / data.length;
     
-    if (totalRainfall > 20) {
+    if (totalRainfall > 100) {
       patterns.push({
         type: 'warning',
         title: 'Heavy Rainfall Expected',
-        description: `Total rainfall of ${totalRainfall.toFixed(1)}mm expected over ${rainyDays} days. Consider crop protection measures.`,
+        description: `Total rainfall of ${totalRainfall.toFixed(0)}mm expected over ${rainyDays} days. Consider crop protection measures.`,
         icon: 'rain'
       });
-    } else if (totalRainfall < 5 && data.length > 3) {
+    } else if (totalRainfall < 20 && data.length > 3) {
       patterns.push({
         type: 'warning',
         title: 'Dry Period Ahead',
-        description: `Limited rainfall (${totalRainfall.toFixed(1)}mm) expected. Plan irrigation accordingly.`,
+        description: `Limited rainfall (${totalRainfall.toFixed(0)}mm total, ${avgDailyRain.toFixed(1)}mm/day average). Plan irrigation accordingly.`,
         icon: 'sun'
+      });
+    } else if (rainyDays > data.length * 0.5 && avgDailyRain > 3) {
+      patterns.push({
+        type: 'info',
+        title: 'Wet Season Expected',
+        description: `${rainyDays} rainy days expected with ${avgDailyRain.toFixed(1)}mm/day average rainfall.`,
+        icon: 'rain'
       });
     }
 
@@ -261,7 +273,7 @@ function Foreshadow() {
               <span className="temp-value">{Math.round(currentWeather.main.temp)}°C</span>
             </div>
             <div className="current-details">
-              <h3>{currentWeather.name}, {currentWeather.sys.country}</h3>
+              <h3>{currentWeather.name}</h3>
               <p className="weather-description">{currentWeather.weather[0].description}</p>
               <div className="current-stats">
                 <div className="stat">

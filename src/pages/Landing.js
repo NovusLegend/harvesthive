@@ -87,7 +87,7 @@ function Landing() {
       </section>
 
       {/* Stats Section */}
-      <section className="stats">
+      {/* <section className="stats">
         <div className="container">
           <div className="stats-grid-landing">
             <div className="stat-item">
@@ -108,7 +108,7 @@ function Landing() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Product Gallery Section */}
       <section className="product-gallery">
@@ -134,7 +134,7 @@ function Landing() {
                 <h3>Quality Grains</h3>
               </div>
             </div>
-            <div className="gallery-item">
+            {/* <div className="gallery-item">
               <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=500&h=400&fit=crop" alt="Herbs" />
               <div className="gallery-overlay">
                 <h3>Fresh Herbs</h3>
@@ -145,18 +145,18 @@ function Landing() {
               <div className="gallery-overlay">
                 <h3>Dairy Products</h3>
               </div>
-            </div>
+            </div> */}
             <div className="gallery-item">
               <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&h=400&fit=crop" alt="Meat" />
               <div className="gallery-overlay">
-                <h3>Premium Meat</h3>
+                <h3>Fresh Meat</h3>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section
       <section className="testimonials">
         <div className="container">
           <h2>What Our Community Says</h2>
@@ -164,7 +164,7 @@ function Landing() {
           <div className="testimonials-grid">
             <div className="testimonial-card">
               <div className="testimonial-image">
-                <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=150&h=150&fit=crop" alt="Sarah M." />
+                <img src="Screenshot 2025-07-13 134330 - Copy.png" alt="Sarah M." />
               </div>
               <div className="quote-icon">❝</div>
               <p className="testimonial-text">
@@ -176,7 +176,7 @@ function Landing() {
             </div>
             <div className="testimonial-card">
               <div className="testimonial-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="John D." />
+                <img src="Screenshot 2025-07-13 134311 - Copy (2).png" alt="John D." />
               </div>
               <div className="quote-icon">❝</div>
               <p className="testimonial-text">
@@ -188,7 +188,7 @@ function Landing() {
             </div>
             <div className="testimonial-card">
               <div className="testimonial-image">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop" alt="Mary K." />
+                <img src="harvesthive\src\pages\otema 2.jpg" alt="Mary K." />
               </div>
               <div className="quote-icon">❝</div>
               <p className="testimonial-text">
@@ -200,7 +200,7 @@ function Landing() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA Section */}
       <section className="cta">

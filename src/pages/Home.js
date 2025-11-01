@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { collection, getDocs, query, orderBy, limit, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useAuth } from '../contexts/AuthContext';
-import { MdInventory, MdChat, MdPeople } from 'react-icons/md';
-import { GiWheat } from 'react-icons/gi';
 import ProductCard from '../components/ProductCard';
 import './Home.css';
 
@@ -74,50 +72,6 @@ function Home() {
           Manage your products and connect with buyers
         </p>
       </header>
-
-      {/* Stats Section */}
-      <section className="stats-section scale-in">
-        <div className="stats-grid">
-          <div className="stat-card">
-            <div className="stat-icon">
-              <GiWheat />
-            </div>
-            <div className="stat-content">
-              <h3 className="stat-number">{loading ? '...' : stats.totalProducts}</h3>
-              <p className="stat-label">Total Products</p>
-            </div>
-          </div>
-          {currentUser && (
-            <div className="stat-card">
-              <div className="stat-icon">
-                <MdInventory />
-              </div>
-              <div className="stat-content">
-                <h3 className="stat-number">{loading ? '...' : stats.userProducts}</h3>
-                <p className="stat-label">Your Products</p>
-              </div>
-            </div>
-          )}
-          <div className="stat-card">
-            <div className="stat-icon">
-              <MdChat />
-            </div>
-            <div className="stat-content">
-              <h3 className="stat-number">Active</h3>
-              <p className="stat-label">Chat System</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-icon">
-              <MdPeople />
-            </div>
-            <div className="stat-content">
-              <h3 className="stat-number">Growing</h3>
-              <p className="stat-label">Community</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Recent Products */}
       <section className="recent-products-section">
